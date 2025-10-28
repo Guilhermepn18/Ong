@@ -1,0 +1,602 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green-dark: #2d5016;      /* Verde musgo escuro */
+    --green-medium: #4a7c2a;    /* Verde musgo médio */
+    --green-light: #6b8e23;     /* Verde musgo claro (chartreuse) */
+    --green-accent: #8fbc8f;    /* Verde musgo suave */
+    --green-very-light: #f0f7e6; /* Verde musgo muito claro */
+    --text-color: #2c3e2d;
+    --white: #ffffff;
+    --gray-light: #f5f5f5;
+    --shadow: 0 2px 10px rgba(45, 80, 22, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--green-very-light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 15px rgba(45, 80, 22, 0.2);
+    border-bottom: 3px solid var(--green-light);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    border: 2px solid var(--green-light);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.nav a:hover {
+    background-color: rgba(107, 142, 35, 0.3);
+    transform: translateY(-2px);
+    border-color: var(--green-light);
+}
+
+.nav a[aria-current="page"] {
+    background-color: var(--green-light);
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(107, 142, 35, 0.4);
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--green-medium), var(--green-light));
+    color: white;
+    padding: 4rem 0;
+    text-align: center;
+    border-bottom: 3px solid var(--green-dark);
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(45, 80, 22, 0.4);
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* Projects Section */
+.projects {
+    padding: 3rem 0;
+    background: var(--green-very-light);
+}
+
+.projects .container {
+    max-width: 1000px;
+}
+
+.projects h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--green-dark);
+    background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.project-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.15);
+    transition: all 0.3s ease;
+    border: 2px solid var(--green-accent);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 300px;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(45, 80, 22, 0.25);
+    border-color: var(--green-light);
+}
+
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-content h3 {
+    color: var(--green-dark);
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--green-light);
+}
+
+.project-content p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-content ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.project-content li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: var(--text-color);
+}
+
+.project-content li::before {
+    content: "🌱";
+    position: absolute;
+    left: 0;
+    color: var(--green-medium);
+}
+
+.project-content strong {
+    color: var(--green-dark);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--green-medium), var(--green-light));
+    color: white;
+    border: 1px solid var(--green-dark);
+    padding: 0.85rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(45, 80, 22, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, var(--green-light), var(--green-medium));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 124, 42, 0.4);
+    color: white;
+}
+
+/* Volunteering Section */
+.volunteering {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--green-very-light), #e8f4e8);
+}
+
+.volunteering h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--green-dark);
+    background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.volunteer-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.step {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(45, 80, 22, 0.1);
+    border: 2px solid var(--green-accent);
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
+    border-color: var(--green-light);
+}
+
+.step h3 {
+    color: var(--green-dark);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.step h3::before {
+    content: '✓';
+    background: var(--green-light);
+    color: white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.step p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Donations Section */
+.donations {
+    padding: 3rem 0;
+    background: var(--green-very-light);
+}
+
+.donations h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--green-dark);
+    background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.donation-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.method {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(45, 80, 22, 0.1);
+    border: 2px solid var(--green-accent);
+    transition: all 0.3s ease;
+}
+
+.method:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(45, 80, 22, 0.2);
+    border-color: var(--green-light);
+}
+
+.method h3 {
+    color: var(--green-dark);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--green-light);
+}
+
+.method p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--green-medium), var(--green-light));
+    color: white;
+    border: 1px solid var(--green-dark);
+    padding: 0.85rem 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(45, 80, 22, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--green-light), var(--green-medium));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(74, 124, 42, 0.4);
+    color: white;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, var(--green-dark), var(--green-medium));
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+    border-top: 3px solid var(--green-light);
+}
+
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Projects Page Responsive Styles */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav ul {
+        gap: 1rem;
+    }
+
+    .page-header {
+        padding: 3rem 0;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-header p {
+        font-size: 1.1rem;
+    }
+
+    .projects,
+    .volunteering,
+    .donations {
+        padding: 2rem 0;
+    }
+
+    .projects h2,
+    .volunteering h2,
+    .donations h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .project-card img {
+        height: 250px;
+    }
+
+    .project-content {
+        padding: 1.5rem;
+    }
+
+    .volunteer-steps {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .donation-methods {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .step,
+    .method {
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .page-header {
+        padding: 2rem 0;
+    }
+
+    .page-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .page-header p {
+        font-size: 1rem;
+    }
+
+    .projects,
+    .volunteering,
+    .donations {
+        padding: 1.5rem 0;
+    }
+
+    .projects h2,
+    .volunteering h2,
+    .donations h2 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .projects-grid {
+        gap: 1.5rem;
+    }
+
+    .project-content {
+        padding: 1rem;
+    }
+
+    .project-content h3 {
+        font-size: 1.4rem;
+    }
+
+    .volunteer-steps {
+        gap: 1rem;
+    }
+
+    .step,
+    .method {
+        padding: 1.25rem 1rem;
+    }
+
+    .step h3,
+    .method h3 {
+        font-size: 1.2rem;
+    }
+
+    .btn-secondary,
+    .btn-primary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Medium screens */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .project-card {
+        grid-template-columns: 45% 55%;
+    }
+
+    .volunteer-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .donation-methods {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .header {
+        background: #000;
+    }
+
+    .page-header {
+        background: #000;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        background: #000;
+    }
+
+    .project-card,
+    .step,
+    .method {
+        border-color: #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .logo img:hover,
+    .nav a:hover,
+    .project-card:hover,
+    .step:hover,
+    .method:hover,
+    .btn:hover {
+        transform: none !important;
+    }
+}
